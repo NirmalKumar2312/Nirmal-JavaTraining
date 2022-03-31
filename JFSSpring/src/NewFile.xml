@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+   <!--  <bean id="printpage" class="BookStore.PrintPage"></bean>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+    <bean class="BookStore.BeanPostProcessclass"></bean>
+    <bean class="BookStore.BeanPostProcessSecondclass"></bean>--> 
+    <!--  <bean id="bookbean" class="BookStore.Book" scope="prototype">this function is work 
+    in (set function in main) it change value to use refer object only-->
+    <bean id="bookbean" class="BookStore.Book" scope="singleton">
+    <property name="price" value="2000"></property> 
+    <property name="Name" value="Javal.0"></property>
+    </bean>
+	<bean id="bookpublisherbean" class="BookStore.BookPublisher">
+	<!-- <property name="book" ref="bookbean"></property>
+	<property name="book_count" value="100"></property> -->
+	<property name="book_list">
+	<list>
+	<value>rules</value>
+	<value>freedom</value>
+	</list>
+	</property>
+	</bean>
+</beans>
